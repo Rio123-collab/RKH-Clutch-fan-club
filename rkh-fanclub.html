@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RKH Clutch Fan Club</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, red, blue);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .logo {
+      width: 120px;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin: 0.5em 0;
+    }
+
+    form, .home-page {
+      max-width: 600px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    input[type="text"], textarea, select {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 1em;
+      color: white;
+      background-color: #000000cc;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ffffff44;
+    }
+
+    .home-page {
+      display: none;
+      margin-top: 30px;
+    }
+
+    .home-page textarea {
+      margin-top: 10px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Logo -->
+  <img src="YOUR_LOGO_HERE" alt="RKH Clutch Logo" class="logo" />
+
+  <h1 id="mainTitle">Join the RKH Clutch Fan Club</h1>
+  <p id="mainDesc">Fill out this form to be part of the Clutch Crew 🔥</p>
+
+  <form id="fanForm">
+    <label for="username">Gamertag or Username</label>
+    <input type="text" id="username" name="username" required />
+
+    <label for="email">Email (optional)</label>
+    <input type="text" id="email" name="email" />
+
+    <label>1. What’s your favorite game of all time?</label>
+    <input type="text" name="q1" />
+
+    <label>2. Console or PC?</label>
+    <select name="q2">
+      <option>Console</option>
+      <option>PC</option>
+      <option>Both</option>
+    </select>
+
+    <label>3. Fortnite or FC 25?</label>
+    <select name="q3">
+      <option>Fortnite</option>
+      <option>FC 25</option>
+      <option>Both</option>
+    </select>
+
+    <label>4. What game are you GOATED at?</label>
+    <input type="text" name="q4" />
+
+    <label>5. How many hours a week do you game?</label>
+    <input type="text" name="q5" />
+
+    <label>6. Who’s your gaming idol?</label>
+    <input type="text" name="q6" />
+
+    <label>7. Keyboard + Mouse or Controller?</label>
+    <select name="q7">
+      <option>Keyboard + Mouse</option>
+      <option>Controller</option>
+    </select>
+
+    <label>8. You in a clan or solo grinder?</label>
+    <input type="text" name="q8" />
+
+    <label>9. What's your dream gaming setup?</label>
+    <textarea name="q9" rows="2"></textarea>
+
+    <label>10. What should RKH Clutch stream next?</label>
+    <textarea name="q10" rows="2"></textarea>
+
+    <button type="submit">Join the Crew</button>
+  </form>
+
+  <div class="home-page" id="homePage">
+    <h2>📅 Daily Updates & Announcements</h2>
+    <p>Post your stream schedule, game drops, or hype notes here!</p>
+
+    <label for="streamUpdate">What's going on today?</label>
+    <textarea id="streamUpdate" placeholder="E.g. Going live at 6pm! Dropping into Seaport City in Fortnite!"></textarea>
+
+    <button onclick="alert('✅ Update saved (for now). Add database to make it real!')">Post Update</button>
+  </div>
+
+  <audio id="clickSound">
+    <source src="https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg" type="audio/ogg">
+  </audio>
+
+  <script>
+    const form = document.getElementById('fanForm');
+    const homePage = document.getElementById('homePage');
+    const clickSound = document.getElementById('clickSound');
+    const mainTitle = document.getElementById('mainTitle');
+    const mainDesc = document.getElementById('mainDesc');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      clickSound.play();
+      form.style.display = 'none';
+      mainTitle.textContent = "Welcome to the Clutch Crew 💯";
+      mainDesc.style.display = 'none';
+      homePage.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
